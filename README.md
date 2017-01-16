@@ -9,7 +9,7 @@ A simple material calendar for react native android
 
     ```gradle
     ...
-    include ':ReactMaterialCalendarView', ':app'
+    include ':ReactMaterialCalendarView', ':app' 
     project(':ReactMaterialCalendarView').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-material-calendarview/app')
     ```
 
