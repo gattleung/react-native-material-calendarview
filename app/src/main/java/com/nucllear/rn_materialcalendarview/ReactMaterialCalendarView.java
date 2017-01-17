@@ -83,6 +83,7 @@ public class ReactMaterialCalendarView extends MaterialCalendarView implements O
     public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
         WritableMap event = Arguments.createMap();
         event.putInt("month", date.getMonth());
+		event.putInt("year", date.getYear());
         ReactContext reactContext = (ReactContext) getContext();
         reactContext
                 .getJSModule(RCTEventEmitter.class)
