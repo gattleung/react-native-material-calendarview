@@ -39,8 +39,14 @@ public class ReactMaterialCalendarViewManager extends SimpleViewManager<ReactMat
 
     @Override
     protected ReactMaterialCalendarView createViewInstance(final ThemedReactContext reactContext) {
-//        ReactMaterialCalendarView rmcv = new ReactMaterialCalendarView(reactContext);
-        return new ReactMaterialCalendarView(reactContext);
+        ReactMaterialCalendarView rmcv = new ReactMaterialCalendarView(reactContext);
+		rmcv.setTitleFormatter(new TitleFormatter() {
+			@Override
+			public CharSequence format(CalendarDay day) {
+				return String.format("%d年%d月", day.getYear(), day.getMonth() + 1);
+			}
+		});
+        return rmcv;
     }
 
 
@@ -214,7 +220,8 @@ public class ReactMaterialCalendarViewManager extends SimpleViewManager<ReactMat
             }
         }
         if (decorated.size() > 0) {
-            view.getEvents().setDates(decorated);
+            //view.getEvents().setDates(decorated);
+            view.setEventDates(decorated);
         }
     }
 

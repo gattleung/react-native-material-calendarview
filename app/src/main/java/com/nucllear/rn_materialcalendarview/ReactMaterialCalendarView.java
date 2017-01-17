@@ -5,6 +5,7 @@ import android.content.Context;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.ArrayList;
 
 import android.support.annotation.NonNull;
 import android.view.ViewGroup;
@@ -92,6 +93,12 @@ public class ReactMaterialCalendarView extends MaterialCalendarView implements O
                         "topMonthChange",
                         event
                 );
+    }
+
+    public void setEventDates(ArrayList<CalendarDay> eventDates) {
+        int color = events.getColor();
+        this.removeDecorator(events);
+        this.addDecorators(new EventDecorator(color, eventDates));
     }
 
     public void setWeekEndsColor(String color) {

@@ -35,6 +35,10 @@ public class EventDecorator implements DayViewDecorator {
         this.dates = new HashSet<>(dates);
     }
 
+    public int getColor() {
+        return this.color;
+    }
+
     public void setColor(String color) {
         this.color = Color.parseColor(color);
     }
